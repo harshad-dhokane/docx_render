@@ -30,10 +30,10 @@
   "version": "1.0.0",
   "main": "app.ts",
   "scripts": {
-    "start": "node dist/app.js",
     "build": "tsc && npm run copy-views",
-    "dev": "tsx watch app.ts",
-    "copy-views": "powershell -Command \"Copy-Item -Path views -Destination dist/views -Recurse -Force\""
+    "copy-views": "cp -r views dist/views",
+    "start": "node dist/app.js",
+    "dev": "ts-node app.ts"
   },
   "keywords": [],
   "author": "",
