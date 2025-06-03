@@ -1,0 +1,42 @@
+{
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.9",
+    "@types/dotenv": "^6.1.1",
+    "@types/exceljs": "^0.5.3",
+    "@types/fs-extra": "^11.0.4",
+    "convertapi": "^1.15.0",
+    "cors": "^2.8.5",
+    "docxtemplater": "^3.63.0",
+    "dotenv": "^16.5.0",
+    "easy-template-x": "^3.2.1",
+    "ejs": "^3.1.10",
+    "exceljs": "^4.4.0",
+    "express": "^5.1.0",
+    "fs-extra": "^11.3.0",
+    "multer": "^2.0.0",
+    "path": "^0.12.7",
+    "pizzip": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.2",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.15.21",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  },
+  "name": "docx_template_to_pdf",
+  "version": "1.0.0",
+  "main": "app.ts",
+  "scripts": {
+    "start": "node dist/app.js",
+    "build": "tsc && npm run copy-views",
+    "dev": "tsx watch app.ts",
+    "copy-views": "powershell -Command \"Copy-Item -Path views -Destination dist/views -Recurse -Force\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,29 @@
+services:
+  # A Docker web service
+  - type: web
+    name: docx-template-service
+    env: docker
+    region: singapore # Choose the region closest to your users
+    plan: starter
+    healthCheckPath: /
+    envVarGroups:
+      - name: supabase-config
+    buildCommand: npm run build
+    startCommand: npm start
+    autoDeploy: true
+    domains:
+      - docx-template-service.onrender.com
+
+envVarGroups:
+  - name: supabase-config
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: SUPABASE_TEMPLATES_BUCKET
+        value: templates
+      - key: SUPABASE_GENERATED_BUCKET
+        value: generated
